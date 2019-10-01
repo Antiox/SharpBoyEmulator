@@ -4,19 +4,127 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <UseWPF>true</UseWPF>
-    <StartupObject></StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
-    <Page Remove="App.xaml" />
+    <None Remove="Resources\activer.png" />
+    <None Remove="Resources\arrow-right-3.png" />
+    <None Remove="Resources\arrow-right-double-2.png" />
+    <None Remove="Resources\basicstepinto.png" />
+    <None Remove="Resources\basicstop.png" />
+    <None Remove="Resources\cheat.png" />
+    <None Remove="Resources\choosemacro.png" />
+    <None Remove="Resources\code-cpp_mini.png" />
+    <None Remove="Resources\db.png" />
+    <None Remove="Resources\delete.png" />
+    <None Remove="Resources\door-open.png" />
+    <None Remove="Resources\edit.png" />
+    <None Remove="Resources\eject.png" />
+    <None Remove="Resources\ic_cs.png" />
+    <None Remove="Resources\layer-delete.png" />
+    <None Remove="Resources\layout-header.png" />
+    <None Remove="Resources\load.png" />
+    <None Remove="Resources\memory.png" />
+    <None Remove="Resources\new.png" />
+    <None Remove="Resources\process-stop-3.png" />
+    <None Remove="Resources\project-open-2.png" />
+    <None Remove="Resources\runbasic.png" />
+    <None Remove="Resources\save.png" />
+    <None Remove="Resources\system-search-5.png" />
+    <None Remove="Resources\togglebreakpoint.png" />
+    <None Remove="Resources\touches.png" />
+    <None Remove="Resources\video-television-3.png" />
+    <None Remove="Resources\view-refresh-5.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="App.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="ViewModels\" />
+    <Content Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Content>
+    <Resource Include="Resources\activer.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\arrow-right-3.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\arrow-right-double-2.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\basicstepinto.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\basicstop.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\cheat.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\choosemacro.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\code-cpp_mini.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\db.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\delete.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\door-open.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\edit.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\eject.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\ic_cs.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\layer-delete.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\layout-header.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\load.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\memory.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\new.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\process-stop-3.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\project-open-2.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\runbasic.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\save.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\system-search-5.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\togglebreakpoint.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\touches.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\video-television-3.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\view-refresh-5.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>
@@ -26,12 +134,12 @@
   <ItemGroup>
     <ProjectReference Include="..\SharpBoyEmulator.BLL\SharpBoyEmulator.BLL.csproj" />
     <ProjectReference Include="..\SharpBoyEmulator.Core\SharpBoyEmulator.Core.csproj" />
-    <ProjectReference Include="..\SharpBoyEmulator.Interfaces\SharpBoyEmulator.Interfaces.csproj" />
     <ProjectReference Include="..\SharpBoyEmulator.Models\SharpBoyEmulator.Models.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Compile Update="Windows\DisassembleWindow.xaml.cs">
+      <SubType>Code</SubType>
       <DependentUpon>DisassembleWindow.xaml</DependentUpon>
     </Compile>
     <Compile Update="Windows\MainWindow.xaml.cs">
@@ -48,5 +156,4 @@
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
-
 </Project>

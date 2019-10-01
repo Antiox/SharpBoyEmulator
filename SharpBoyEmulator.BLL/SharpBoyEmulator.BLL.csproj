@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SharpBoyEmulator.Interfaces\SharpBoyEmulator.Interfaces.csproj" />
     <ProjectReference Include="..\SharpBoyEmulator.Models\SharpBoyEmulator.Models.csproj" />
   </ItemGroup>
 

@@ -1,0 +1,42 @@
+﻿<Window x:Class="SharpBoyEmulator.GUI.RomHeaderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SharpBoyEmulator.GUI"
+        mc:Ignorable="d"
+        Title="Rom Header" Height="350" Width="540" Loaded="RomheaderWindow_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="175*"/>
+            <ColumnDefinition Width="36*"/>
+            <ColumnDefinition Width="40*"/>
+            <ColumnDefinition Width="17*"/>
+            <ColumnDefinition Width="61*"/>
+            <ColumnDefinition Width="211*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="label" Content="Titre :" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="180" Grid.ColumnSpan="2"/>
+        <Label x:Name="label_Copy" Content="Compatibilité :" HorizontalAlignment="Center" Margin="0,36,0,0" VerticalAlignment="Top" Width="180" Grid.ColumnSpan="2"/>
+        <Label x:Name="label_Copy1" Content="Editeur :" HorizontalAlignment="Center" Margin="0,62,0,0" VerticalAlignment="Top" Width="180" Grid.ColumnSpan="2"/>
+        <Label x:Name="label_Copy2" Content="Mode Super GB :" HorizontalAlignment="Center" Margin="0,88,0,0" VerticalAlignment="Top" Width="180" Grid.ColumnSpan="2"/>
+        <Label x:Name="label_Copy3" Content="Type de cartouche :" HorizontalAlignment="Center" Margin="0,114,0,0" VerticalAlignment="Top" Width="180" Grid.ColumnSpan="2"/>
+        <Label x:Name="label_Copy4" Content="Taille de la ROM:" HorizontalAlignment="Center" Margin="0,142,0,0" VerticalAlignment="Top" Width="180" Grid.ColumnSpan="2"/>
+        <Label x:Name="label_Copy5" Content="Taille de la RAM :" HorizontalAlignment="Center" Margin="0,166,0,0" VerticalAlignment="Top" Width="180" Grid.ColumnSpan="2"/>
+        <Label x:Name="label_Copy6" Content="Destionation :" HorizontalAlignment="Center" Margin="0,192,0,0" VerticalAlignment="Top" Width="180" Grid.ColumnSpan="2"/>
+        <Label x:Name="label_Copy7" Content="Version :" HorizontalAlignment="Center" Margin="0,218,0,0" VerticalAlignment="Top" Width="180" Grid.ColumnSpan="2"/>
+        <Label x:Name="label_Copy8" Content="Somme de contrôle (en-tête) : " HorizontalAlignment="Center" Margin="0,244,0,0" VerticalAlignment="Top" Width="180" Grid.ColumnSpan="2"/>
+        <Label x:Name="label_Copy9" Content="Somme de contrôle (globale) : " HorizontalAlignment="Center" Margin="0,270,0,0" VerticalAlignment="Top" Width="180" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="TitleTextBox" HorizontalAlignment="Left" Margin="15,14,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="243" IsEnabled="False" Grid.Column="3" Grid.ColumnSpan="3"/>
+        <TextBox x:Name="CompatibilityTextBox" HorizontalAlignment="Left" Margin="15,40,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="243" IsEnabled="False" Grid.Column="3" Grid.ColumnSpan="3"/>
+        <TextBox x:Name="EditorTextBox" HorizontalAlignment="Left" Margin="15,66,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="243" IsEnabled="False" Grid.Column="3" Grid.ColumnSpan="3"/>
+        <TextBox x:Name="SuperGBModeTextBox" HorizontalAlignment="Left" Margin="15,92,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="243" IsEnabled="False" Grid.Column="3" Grid.ColumnSpan="3"/>
+        <TextBox x:Name="CartridgeTypeTextBox" HorizontalAlignment="Left" Margin="15,118,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="243" IsEnabled="False" Grid.Column="3" Grid.ColumnSpan="3"/>
+        <TextBox x:Name="ROMSizeTextBox" HorizontalAlignment="Left" Margin="15,144,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="243" IsEnabled="False" Grid.Column="3" Grid.ColumnSpan="3"/>
+        <TextBox x:Name="RAMSizeTextBox" HorizontalAlignment="Left" Margin="15,170,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="243" IsEnabled="False" Grid.Column="3" Grid.ColumnSpan="3"/>
+        <TextBox x:Name="DestionationTextBox" HorizontalAlignment="Left" Margin="15,196,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="243" IsEnabled="False" Grid.Column="3" Grid.ColumnSpan="3"/>
+        <TextBox x:Name="VersionTextBox" HorizontalAlignment="Left" Margin="15,222,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="243" IsEnabled="False" Grid.Column="3" Grid.ColumnSpan="3"/>
+        <TextBox x:Name="HeaderChecksumTextBox" HorizontalAlignment="Left" Margin="15,248,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="243" IsEnabled="False" Grid.Column="3" Grid.ColumnSpan="3"/>
+        <TextBox x:Name="GlobalChecksumTextBox" HorizontalAlignment="Left" Margin="15,274,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="243" IsEnabled="False" Grid.Column="3" Grid.ColumnSpan="3"/>
+
+    </Grid>
+</Window>

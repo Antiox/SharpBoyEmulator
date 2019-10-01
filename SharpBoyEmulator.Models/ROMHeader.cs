@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SharpBoyEmulator.Models
 {
-    public class ROMHeader
+    public class RomHeader : IRomHeader
     {
         public string Title { get; set; }
         public string ModeGBC { get; set; }
@@ -17,11 +17,9 @@ namespace SharpBoyEmulator.Models
         public int Version { get; set; }
         public byte HeaderChecksum { get; set; }
         public short GlobalChecksum { get; set; }
-        public string Path { get; set; }
-        static public string SavePath { get; set; }
 
 
-        public ROMHeader(byte[] headerData)
+        public RomHeader(byte[] headerData)
         {
             Version = headerData[0x14C];
             HeaderChecksum = headerData[0x14D];

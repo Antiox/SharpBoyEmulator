@@ -8,63 +8,71 @@
         Title="MainWindow" Height="343.834" Width="439.276">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="229*"/>
-            <ColumnDefinition Width="202*"/>
+            <ColumnDefinition Width="181*"/>
+            <ColumnDefinition Width="258*"/>
         </Grid.ColumnDefinitions>
         <Menu x:Name="menu" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="431" Grid.ColumnSpan="2">
-            <MenuItem Header="Fichier" Height="25" Width="54">
+            <MenuItem Header="Fichier" Height="25" Width="54" Name="FileMenuItem">
                 <MenuItem Header="Ouvrir ..." HorizontalAlignment="Left" Height="20" Width="170" InputGestureText="Ctrl+O" Name="OpenMenuItem"  Click="OpenMenuItem_Click">
+                    <MenuItem.Icon>
+                        <Image Source="../Resources/project-open-2.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Ejecter" HorizontalAlignment="Left" Height="20" Width="170" InputGestureText="Ctrl+W" Name="EjectMenuItem"  Click="EjectMenuItem_Click">
+                    <MenuItem.Icon>
+                        <Image Source="../Resources/eject.png" />
+                    </MenuItem.Icon>
                 </MenuItem>
                 <Separator HorizontalAlignment="Left" Height="1" Width="170" RenderTransformOrigin="0.5,0.5" />
                 <MenuItem Header="Quitter" HorizontalAlignment="Left" Height="20" Width="170" InputGestureText="Alt+F4" Name="ExitMenuItem" Click="ExitMenuItem_Click">
                     <MenuItem.Icon>
-                        <Image Source="/Resources/door-open.png" />
+                        <Image Source="../Resources/door-open.png" />
                     </MenuItem.Icon>
                 </MenuItem>
 
             </MenuItem>
-            <MenuItem Header="Outils" Height="25" Width="50">
+            <MenuItem Header="Outils" Height="25" Width="50" Name="ToolsMenuItem">
                 <MenuItem x:Name="DisassembleMenuItem" Header="Désassembler" HorizontalAlignment="Left" Height="20" Width="270" InputGestureText="Ctrl+D" Click="DisassembleMenuItem_Click" >
                     <MenuItem.Icon>
-                        <Image Source="/Resources/choosemacro.png" />
+                        <Image Source="../Resources/choosemacro.png" />
                     </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Header="Memory Viewer" HorizontalAlignment="Left" Height="20" Width="270" InputGestureText="Ctrl+M">
                     <MenuItem.Icon>
-                        <Image Source="/Resources/memory.png" />
+                        <Image Source="../Resources/memory.png" />
                     </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Header="Video Data Viewer" HorizontalAlignment="Left" Height="20" Width="270" InputGestureText="Ctrl+V">
                     <MenuItem.Icon>
-                        <Image Source="/Resources/video-television-3.png" />
+                        <Image Source="../Resources/video-television-3.png" />
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="ROM Header" HorizontalAlignment="Left" Height="20" Width="270" InputGestureText="Ctrl+H" >
+                <MenuItem Header="ROM Header" HorizontalAlignment="Left" Height="20" Width="270" InputGestureText="Ctrl+H" Click="RomHeaderMenuItem_Click" >
                     <MenuItem.Icon>
-                        <Image Source="/Resources/layout-header.png" />
+                        <Image Source="../Resources/layout-header.png" />
                     </MenuItem.Icon>
                 </MenuItem>
                 <Separator HorizontalAlignment="Left" Height="1" Width="270" RenderTransformOrigin="0.5,0.5" />
                 <MenuItem Header="Configuration des touches" HorizontalAlignment="Left" Height="20" Width="270" InputGestureText="Ctrl+K">
                     <MenuItem.Icon>
-                        <Image Source="/Resources/touches.png" />
+                        <Image Source="../Resources/touches.png" />
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
-            <MenuItem Header ="Jeu" Height="25" Width="36">
+            <MenuItem Header ="Jeu" Height="25" Width="36" Name="GameMenuItem">
                 <MenuItem Header="Sauvegarder" HorizontalAlignment="Left" Height="20" Width="220" InputGestureText="F1" >
                     <MenuItem.Icon>
-                        <Image Source="/Resources/save.png" />
+                        <Image Source="../Resources/save.png" />
                     </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Header="Charger" HorizontalAlignment="Left" Height="20" Width="220" InputGestureText="Ctrl+F1">
                     <MenuItem.Icon>
-                        <Image Source="/Resources/load.png" />
+                        <Image Source="../Resources/load.png" />
                     </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Header="Codes de triche ..." HorizontalAlignment="Left" Height="20" Width="220" InputGestureText="Ctrl+C">
                     <MenuItem.Icon>
-                        <Image Source="/Resources/cheat.png" />
+                        <Image Source="../Resources/cheat.png" />
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>

@@ -19,24 +19,14 @@ namespace SharpBoyEmulator.GUI
     /// </summary>
     public partial class App : Application
     {
-        public static ISharpBoyBusinessLogic BusinessLogic { get; private set; }
+        public ISharpBoyBusinessLogic BusinessLogic { get; set; }
 
-        /// <summary>
-        /// Application Entry Point.
-        /// </summary>
-        [STAThreadAttribute()]
-        [System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "4.0.0.0")]
-        public static void Main()
+
+        void Application_Startup(object sender, StartupEventArgs args)
         {
             var injector = new SimpleInjectorConfiguration();
             injector.InitializeContainer();
-
             BusinessLogic = injector.Container.GetInstance<ISharpBoyBusinessLogic>();
-
-            App app = new App();
-            app.InitializeComponent();
-            app.Run();
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using SharpBoyEmulator.Models;
 
 namespace SharpBoyEmulator.Interfaces
 {
@@ -9,6 +10,7 @@ namespace SharpBoyEmulator.Interfaces
         IEmulator Emulator { get; set; }
 
         void LoadRomData(string romPath);
-        ROMHeader GetROMHeader(byte[] headerData);
+        IRomHeader GetROMHeader();
+        void ResetEmulator();
     }
 }

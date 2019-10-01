@@ -30,7 +30,8 @@ namespace SharpBoyEmulator.GUI
         public MainWindow()
         {
             InitializeComponent();
-            businessLogic = App.BusinessLogic;
+            DisableControls();
+            businessLogic = ((App)Application.Current).BusinessLogic;
         }
 
         private void OpenMenuItem_Click(object sender, RoutedEventArgs e)
@@ -44,9 +45,8 @@ namespace SharpBoyEmulator.GUI
             if (romFileDialog.ShowDialog(this) == true)
             {
                 businessLogic.LoadRomData(romFileDialog.FileName);
+                EnableControls();
             }
-
-            
         }
 
         private void ExitMenuItem_Click(object sender, RoutedEventArgs e)
@@ -56,9 +56,36 @@ namespace SharpBoyEmulator.GUI
 
         private void DisassembleMenuItem_Click(object sender, RoutedEventArgs e)
         {
-
-
             new DisassembleWindow().ShowDialog();
+        }
+
+        private void RomHeaderMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            new RomHeaderWindow().ShowDialog();
+        }
+
+        private void EjectMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            DisableControls();
+            businessLogic.ResetEmulator();
+        }
+
+
+
+
+
+        private void DisableControls()
+        {
+            ToolsMenuItem.IsEnabled = false;
+            GameMenuItem.IsEnabled = false;
+            EjectMenuItem.IsEnabled = false;
+        }
+
+        private void EnableControls()
+        {
+            ToolsMenuItem.IsEnabled = true;
+            GameMenuItem.IsEnabled = true;
+            EjectMenuItem.IsEnabled = true;
         }
     }
 }
