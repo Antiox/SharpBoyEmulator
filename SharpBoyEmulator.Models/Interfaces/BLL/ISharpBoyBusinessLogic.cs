@@ -12,5 +12,7 @@ namespace SharpBoyEmulator.Interfaces
         void LoadRomData(string romPath);
         IRomHeader GetROMHeader();
         void ResetEmulator();
+
+        IMemoryCell[] GetMemoryCells(int startIndex, int endIndex);
     }
 }

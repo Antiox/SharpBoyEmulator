@@ -23,18 +23,23 @@ namespace SharpBoyEmulator.Core
 
         public void LoadMemory(byte[] data)
         {
-            Memory.Data = data;
+            Memory.SetMemoryCells(data);
         }
 
 
         public IRomHeader GetRomHeader()
         {
-            return new RomHeader(Memory.Data);
+            return new RomHeader(Memory.GetByteData(0x100, 0x14F));
         }
 
         public void ResetEmulator()
         {
             throw new NotImplementedException();
+        }
+
+        public IMemoryCell[] GetMemoryCells(int startIndex, int endIndex)
+        {
+            return Memory.GetMemoryCells(startIndex, endIndex);
         }
     }
 }

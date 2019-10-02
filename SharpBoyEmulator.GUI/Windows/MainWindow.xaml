@@ -37,7 +37,7 @@
                         <Image Source="../Resources/choosemacro.png" />
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="Memory Viewer" HorizontalAlignment="Left" Height="20" Width="270" InputGestureText="Ctrl+M">
+                <MenuItem Header="Memory Viewer" HorizontalAlignment="Left" Height="20" Width="270" InputGestureText="Ctrl+M" Click="MemoryViewerMenuItem_Click">
                     <MenuItem.Icon>
                         <Image Source="../Resources/memory.png" />
                     </MenuItem.Icon>

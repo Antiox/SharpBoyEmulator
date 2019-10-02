@@ -70,6 +70,10 @@ namespace SharpBoyEmulator.GUI
             businessLogic.ResetEmulator();
         }
 
+        private void MemoryViewerMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            new MemoryViewerWindow().ShowDialog();
+        }
 
 
 

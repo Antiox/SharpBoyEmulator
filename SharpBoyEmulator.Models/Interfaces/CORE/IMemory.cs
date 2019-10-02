@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SharpBoyEmulator.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,9 +7,16 @@ namespace SharpBoyEmulator.Interfaces
 {
     public interface IMemory
     {
-        byte[] Data { get; set; }
+        IMemoryCell[] Data { get; set; }
 
-        void Write(int adress, byte value);
-        byte Read(int adress);
+        byte[] GetByteData();
+        byte[] GetByteData(int endIndex);
+        byte[] GetByteData(int startIndex, int endIndex);
+
+        IMemoryCell[] GetMemoryCells();
+        IMemoryCell[] GetMemoryCells(int endIndex);
+        IMemoryCell[] GetMemoryCells(int startIndex, int endIndex);
+
+        void SetMemoryCells(byte[] data);
     }
 }

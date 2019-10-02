@@ -35,5 +35,10 @@ namespace SharpBoyEmulator.BLL
         {
             Emulator.ResetEmulator();
         }
+
+        public IMemoryCell[] GetMemoryCells(int startIndex, int endIndex)
+        {
+            return Emulator.GetMemoryCells(startIndex, endIndex);
+        }
     }
 }

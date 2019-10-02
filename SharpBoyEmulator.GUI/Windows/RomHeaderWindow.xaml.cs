@@ -41,8 +41,8 @@ namespace SharpBoyEmulator.GUI
             EditorTextBox.Text = romHeader?.Editor;
             SuperGBModeTextBox.Text = romHeader?.ModeSGB;
             CartridgeTypeTextBox.Text = romHeader?.TypeCartouche;
-            ROMSizeTextBox.Text = $"{romHeader?.ROMSize.ToString("N0")} Ko";
-            RAMSizeTextBox.Text = $"{romHeader?.RAMSize.ToString("N0")} Ko";
+            ROMSizeTextBox.Text = $"{romHeader?.ROMSize.ToString("N0")} o";
+            RAMSizeTextBox.Text = $"{romHeader?.RAMSize.ToString("N0")} o";
             DestionationTextBox.Text = romHeader?.Destination;
             VersionTextBox.Text = romHeader?.Version.ToString();
             HeaderChecksumTextBox.Text = $"0x{romHeader?.HeaderChecksum.ToString("X2")}";

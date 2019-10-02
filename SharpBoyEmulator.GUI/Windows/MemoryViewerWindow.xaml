@@ -1,0 +1,32 @@
+﻿<Window x:Class="SharpBoyEmulator.GUI.MemoryViewerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SharpBoyEmulator.GUI"
+        mc:Ignorable="d"
+        Title="MemoryViewerWindow" Height="500" Width="400" Loaded="Window_Loaded">
+    <Grid>
+        <Menu x:Name="menu" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="400">
+            <ComboBox x:Name="MemoryDomainComboBox" Width="173" SelectedIndex="0" SelectionChanged="MemoryDomainComboBox_SelectionChanged">
+                <ComboBoxItem Content="Tout (0000-FFFF)"/>
+                <ComboBoxItem Content="ROM (0000-7FFF)"/>
+                <ComboBoxItem Content="Video RAM (8000-9FFF)"/>
+                <ComboBoxItem Content="Work RAM (C000-DFFF)"/>
+                <ComboBoxItem Content="Sprite Memory (FE00-FE9F)"/>
+                <ComboBoxItem Content="I/O Memory (FF00-FF4B)"/>
+                <ComboBoxItem Content="Internal RAM (FF80-FFFE)"/>
+            </ComboBox>
+            <Label x:Name="label" Content="Aller à l'adresse :" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="0,-3,-13,0"/>
+            <TextBox x:Name="AddressTextBox" Text="" TextWrapping="Wrap" Width="65" TextChanged="AddressTextBox_TextChanged" KeyDown="AddressTextBox_KeyDown"/>
+        </Menu>
+        <ListView x:Name="MemoryListView" Margin="0,24,0,0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Adresse" DisplayMemberBinding="{Binding HexAddress}" Width="104"/>
+                    <GridViewColumn Header="Valeur" DisplayMemberBinding="{Binding HexValue}" Width="98"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>
