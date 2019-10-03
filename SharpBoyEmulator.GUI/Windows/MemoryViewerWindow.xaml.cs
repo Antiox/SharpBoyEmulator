@@ -22,18 +22,13 @@ namespace SharpBoyEmulator.GUI
     public partial class MemoryViewerWindow : Window
     {
         private readonly ISharpBoyBusinessLogic businessLogic;
-
+        private IMemoryCell[] cells;
 
 
         public MemoryViewerWindow()
         {
             businessLogic = ((App)Application.Current).BusinessLogic;
             InitializeComponent();
-        }
-
-        private void AddressTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
 
         private void AddressTextBox_KeyDown(object sender, KeyEventArgs e)
@@ -72,13 +67,16 @@ namespace SharpBoyEmulator.GUI
             if (MemoryListView == null)
                 return;
 
-            MemoryListView.ItemsSource = businessLogic.GetMemoryCells(startIndex, endIndex);
+            cells = businessLogic.GetMemoryCells(startIndex, endIndex);
+            MemoryListView.ItemsSource = cells;
         }
 
         private void GoToAddress(string hexAddress)
         {
             if(int.TryParse(hexAddress, NumberStyles.HexNumber, null , out int address))
             {
+                MemoryListView.SelectedItem = cells.First(c => c.Address == address);
+                MemoryListView.ScrollIntoView(MemoryListView.SelectedItem);
             }
             else MessageBox.Show("L'adresse 0x" + address.ToString("X4") + " n'a pas été trouvé !", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
         }

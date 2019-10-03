@@ -13,10 +13,14 @@ namespace SharpBoyEmulator.Interfaces
         byte[] GetByteData(int endIndex);
         byte[] GetByteData(int startIndex, int endIndex);
 
+        byte GetByteValue(int index);
+
         IMemoryCell[] GetMemoryCells();
         IMemoryCell[] GetMemoryCells(int endIndex);
         IMemoryCell[] GetMemoryCells(int startIndex, int endIndex);
 
+        void SetMemoryCell(int address, byte data);
         void SetMemoryCells(byte[] data);
+        void PowerUpSequence();
     }
 }

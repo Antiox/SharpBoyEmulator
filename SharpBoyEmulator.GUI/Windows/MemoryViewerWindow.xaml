@@ -18,7 +18,7 @@
                 <ComboBoxItem Content="Internal RAM (FF80-FFFE)"/>
             </ComboBox>
             <Label x:Name="label" Content="Aller à l'adresse :" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="0,-3,-13,0"/>
-            <TextBox x:Name="AddressTextBox" Text="" TextWrapping="Wrap" Width="65" TextChanged="AddressTextBox_TextChanged" KeyDown="AddressTextBox_KeyDown"/>
+            <TextBox x:Name="AddressTextBox" Text="" TextWrapping="Wrap" Width="65" KeyDown="AddressTextBox_KeyDown"/>
         </Menu>
         <ListView x:Name="MemoryListView" Margin="0,24,0,0">
             <ListView.View>
