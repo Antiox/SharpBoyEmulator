@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using SharpBoyEmulator.Interfaces;
 using SharpBoyEmulator.Models;
 
 namespace SharpBoyEmulator.BLL

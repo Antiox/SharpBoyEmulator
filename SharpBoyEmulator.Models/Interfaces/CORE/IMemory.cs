@@ -1,9 +1,8 @@
-﻿using SharpBoyEmulator.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SharpBoyEmulator.Interfaces
+namespace SharpBoyEmulator.Models
 {
     public interface IMemory
     {

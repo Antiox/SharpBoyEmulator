@@ -1,6 +1,6 @@
 ﻿using SharpBoyEmulator.Core;
+using SharpBoyEmulator.Models;
 using SharpBoyEmulator.BLL;
-using SharpBoyEmulator.Interfaces;
 using SimpleInjector;
 using System;
 using System.Collections.Generic;

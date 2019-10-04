@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using System.Windows;
 using SharpBoyEmulator.BLL;
 using SharpBoyEmulator.Core;
-using SharpBoyEmulator.Interfaces;
 using SharpBoyEmulator.Models;
 using SharpBoyEmulator.GUI.DepedencyInjection;
 

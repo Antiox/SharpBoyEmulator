@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SharpBoyEmulator.Models
+namespace SharpBoyEmulator.Test
 {
-    public interface IProcessor
+    class MemoryTests
     {
+
     }
 }

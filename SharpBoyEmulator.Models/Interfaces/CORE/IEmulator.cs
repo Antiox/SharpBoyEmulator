@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using SharpBoyEmulator.Interfaces;
-using SharpBoyEmulator.Models;
 
-namespace SharpBoyEmulator.Interfaces
+namespace SharpBoyEmulator.Models
 {
     public interface IEmulator
     {

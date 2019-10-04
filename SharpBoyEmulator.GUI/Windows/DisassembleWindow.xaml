@@ -5,8 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SharpBoyEmulator.GUI"
         mc:Ignorable="d"
-        Title="DisassembleWindow" Height="450" Width="800">
+        Title="DisassembleWindow" Height="520" Width="390">
     <Grid>
-        
+        <Menu x:Name="menu" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="390" >
+            <Button x:Name="StartStopButton" Click="StartStopButton_Click">
+                    <Image Source="../Resources/runbasic.png" />
+            </Button>
+            <Button x:Name="ExecuteInstructionButton" Click="ExecuteInstructionButton_Click">
+                <Image Source="../Resources/basicstepinto.png" />
+            </Button>
+        </Menu>
+
     </Grid>
 </Window>

@@ -1,5 +1,4 @@
-﻿using SharpBoyEmulator.Interfaces;
-using SharpBoyEmulator.Models;
+﻿using SharpBoyEmulator.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;

@@ -23,5 +23,16 @@ namespace SharpBoyEmulator.GUI
         {
             InitializeComponent();
         }
+
+
+        private void StartStopButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ExecuteInstructionButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
