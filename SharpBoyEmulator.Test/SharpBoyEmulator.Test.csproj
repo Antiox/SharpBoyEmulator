@@ -15,4 +15,10 @@
     <PackageReference Include="coverlet.collector" Version="1.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SharpBoyEmulator.BLL\SharpBoyEmulator.BLL.csproj" />
+    <ProjectReference Include="..\SharpBoyEmulator.Core\SharpBoyEmulator.Core.csproj" />
+    <ProjectReference Include="..\SharpBoyEmulator.Models\SharpBoyEmulator.Models.csproj" />
+  </ItemGroup>
+
 </Project>

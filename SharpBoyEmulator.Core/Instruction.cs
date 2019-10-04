@@ -10,11 +10,13 @@ namespace SharpBoyEmulator.Core
         public int Address { get; set; }
         public string HexAddress => $"0x{Address.ToString("X4")}";
 
-        public string Description => throw new NotImplementedException();
+        public string Description { get; set; }
 
-        public byte Function { get; set; }
+        public byte Operation { get; set; }
         public byte Parameter1 { get; set; }
         public byte Parameter2 { get; set; }
+        public int Cycle { get; set; }
+
 
         public void Execute()
         {

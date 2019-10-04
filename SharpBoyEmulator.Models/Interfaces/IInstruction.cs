@@ -8,10 +8,10 @@ namespace SharpBoyEmulator.Models
     {
         int Address { get; set; }
         string HexAddress { get; }
+        string Description { get; set; }
         byte Operation { get; set; }
         byte Parameter1 { get; set; }
         byte Parameter2 { get; set; }
-        string Description { get; set; }
         int Cycle { get; set; }
 
 
