@@ -34,7 +34,7 @@ namespace SharpBoyEmulator.GUI
 
         private void Initialize()
         {
-            var romHeader = businessLogic.GetROMHeader();
+            var romHeader = new RomHeader(null);
 
             TitleTextBox.Text = romHeader?.Title;
             CompatibilityTextBox.Text = romHeader?.ModeGBC;

@@ -8,12 +8,12 @@ namespace SharpBoyEmulator.BLL
 {
     public class SharpBoyBusinessLogic : ISharpBoyBusinessLogic
     {
-        public IEmulator Emulator { get; set; }
+        public IGameBoy Device { get; set; }
 
 
-        public SharpBoyBusinessLogic(IEmulator emulator)
+        public SharpBoyBusinessLogic(IGameBoy device)
         {
-            Emulator = emulator;
+            Device = device;
         }
 
 
@@ -22,22 +22,22 @@ namespace SharpBoyEmulator.BLL
             using var stream = new FileStream(romPath, FileMode.Open, FileAccess.Read);
             var _data = new byte[stream.Length];
             stream.Read(_data, 0, _data.Length);
-            Emulator.LoadMemory(_data);
+            Device.LoadMemory(_data);
         }
 
         public IRomHeader GetROMHeader()
         {
-            return Emulator.GetRomHeader();
+            return Device.GetRomHeader();
         }
 
         public void ResetEmulator()
         {
-            Emulator.ResetEmulator();
+            Device.ResetEmulator();
         }
 
         public IMemoryCell[] GetMemoryCells(int startIndex, int endIndex)
         {
-            return Emulator.GetMemoryCells(startIndex, endIndex);
+            return Device.GetMemoryCells(startIndex, endIndex);
         }
     }
 }

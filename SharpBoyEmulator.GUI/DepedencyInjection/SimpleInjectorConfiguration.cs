@@ -20,8 +20,8 @@ namespace SharpBoyEmulator.GUI.DepedencyInjection
         internal void InitializeContainer()
         {
             Container.Register<ISharpBoyBusinessLogic, SharpBoyBusinessLogic>(Lifestyle.Singleton);
-            Container.RegisterInitializer<ISharpBoyBusinessLogic>(controller => controller.Emulator = Container.GetInstance<IEmulator>());
-            Container.Register<IEmulator, Emulator>(Lifestyle.Singleton);
+            Container.RegisterInitializer<ISharpBoyBusinessLogic>(controller => controller.Device = Container.GetInstance<IGameBoy>());
+            Container.Register<IGameBoy, GameBoy>(Lifestyle.Singleton);
             Container.Verify();
         }
     }

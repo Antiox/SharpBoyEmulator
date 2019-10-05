@@ -6,7 +6,7 @@ namespace SharpBoyEmulator.Models
 {
     public interface ISharpBoyBusinessLogic
     {
-        IEmulator Emulator { get; set; }
+        IGameBoy Device { get; set; }
 
         void LoadRomData(string romPath);
         IRomHeader GetROMHeader();

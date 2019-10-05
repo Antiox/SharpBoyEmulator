@@ -66,7 +66,7 @@ namespace SharpBoyEmulator.GUI
             if (MemoryListView == null)
                 return;
 
-            cells = businessLogic.GetMemoryCells(startIndex, endIndex);
+
             MemoryListView.ItemsSource = cells;
         }
 
