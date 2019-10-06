@@ -5,16 +5,79 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SharpBoyEmulator.GUI"
         mc:Ignorable="d"
-        Title="DisassembleWindow" Height="520" Width="390">
+        Title="DisassembleWindow" Height="450" Width="550" MinWidth="550" MinHeight="350" Loaded="Window_Loaded">
     <Grid>
-        <Menu x:Name="menu" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="390" >
+        <Menu x:Name="menu" Height="25" VerticalAlignment="Top" >
             <Button x:Name="StartStopButton" Click="StartStopButton_Click">
-                    <Image Source="../Resources/runbasic.png" />
+                <Image Source="../Resources/runbasic.png" />
             </Button>
-            <Button x:Name="ExecuteInstructionButton" Click="ExecuteInstructionButton_Click">
+            <Button x:Name="ExecuteInstructionButton" Click="ExecuteInstructionButton_Click" Margin="0,0,0,0">
                 <Image Source="../Resources/basicstepinto.png" />
             </Button>
+            <Label x:Name="label" Content="Aller à l'adresse :" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="-5,-3,-13,0"/>
+            <TextBox x:Name="AddressTextBox" Text="" TextWrapping="Wrap" Width="65" KeyDown="AddressTextBox_KeyDown"/>
+            <Button x:Name="RefreshInstructionButton" Click="RefreshInstructionButton_Click" Margin="0,0,0,0">
+                <Image Source="../Resources/view-refresh-5.png" />
+            </Button>
         </Menu>
+        <ListView x:Name="InstructionsListView" Margin="10,24,250,50">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Adresse" DisplayMemberBinding="{Binding HexAddress}" Width="84"/>
+                    <GridViewColumn Header="Octets" DisplayMemberBinding="{Binding RawBytes}" Width="76"/>
+                    <GridViewColumn Header="Instruction" DisplayMemberBinding="{Binding Description}" Width="91"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <GroupBox x:Name="groupBox" Header="Registres" Margin="305,30,10,50" HorizontalAlignment="Right">
+            <Grid >
+                <Label Content="AF :" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="28" FontWeight="Bold" Padding="0,0,0,0"/>
+                <Label Content="HL :" HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top" Width="28" FontWeight="Bold" Padding="0,0,0,0"/>
+                <Label Content="DE :" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" Width="28" FontWeight="Bold" Padding="0,0,0,0"/>
+                <Label Content="BC :" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top" Width="28" FontWeight="Bold" Padding="0,0,0,0"/>
+                <Label x:Name="afRegisterLabel" Content="0x0000" HorizontalAlignment="Left" Margin="43,10,0,0" VerticalAlignment="Top" Width="53" Padding="0,0,0,0"/>
+                <Label x:Name="bcRegisterLabel" Content="0x0000" HorizontalAlignment="Left" Margin="43,25,0,0" VerticalAlignment="Top" Width="53" Padding="0,0,0,0"/>
+                <Label x:Name="deRegisterLabel" Content="0x0000" HorizontalAlignment="Left" Margin="43,40,0,0" VerticalAlignment="Top" Width="53" Padding="0,0,0,0"/>
+                <Label x:Name="hlRegisterLabel" Content="0x0000" HorizontalAlignment="Left" Margin="43,55,0,0" VerticalAlignment="Top" Width="53" Padding="0,0,0,0"/>
 
+                <CheckBox x:Name="zFlagCheckbox" Content="Z" HorizontalAlignment="Left" Margin="124,10,0,0" VerticalAlignment="Top" IsEnabled="False"/>
+                <CheckBox x:Name="nFlagCheckbox" Content="N" HorizontalAlignment="Left" Margin="124,25,0,0" VerticalAlignment="Top" IsEnabled="False"/>
+                <CheckBox x:Name="hFlagCheckbox" Content="H" HorizontalAlignment="Left" Margin="124,40,0,0" VerticalAlignment="Top" IsEnabled="False"/>
+                <CheckBox x:Name="cFlagCheckbox" Content="C" HorizontalAlignment="Left" Margin="124,55,0,0" VerticalAlignment="Top" IsEnabled="False"/>
+
+                <Label Content="PC :" HorizontalAlignment="Left" Margin="10,94,0,0" VerticalAlignment="Top" Width="28" FontWeight="Bold" Padding="0,0,0,0"/>
+                <Label Content="SP :" HorizontalAlignment="Left" Margin="10,109,0,0" VerticalAlignment="Top" Width="28" FontWeight="Bold" Padding="0,0,0,0"/>
+                <Label Content="IE :" HorizontalAlignment="Left" Margin="10,125,0,0" VerticalAlignment="Top" Width="28" FontWeight="Bold" Padding="0,0,0,0"/>
+                <Label Content="IF :" HorizontalAlignment="Left" Margin="10,139,0,0" VerticalAlignment="Top" Width="28" FontWeight="Bold" Padding="0,0,0,0"/>
+                <Label Content="LY :" HorizontalAlignment="Left" Margin="120,94,0,0" VerticalAlignment="Top" Width="36" FontWeight="Bold" Padding="0,0,0,0"/>
+                <Label Content="LCDC :" HorizontalAlignment="Left" Margin="120,109,0,0" VerticalAlignment="Top" Width="36" FontWeight="Bold" Padding="0,0,0,0"/>
+                <Label Content="STAT :" HorizontalAlignment="Left" Margin="120,125,0,0" VerticalAlignment="Top" Width="36" FontWeight="Bold" Padding="0,0,0,0"/>
+                <Label Content="SCX :" HorizontalAlignment="Left" Margin="10,154,0,0" VerticalAlignment="Top" Width="28" FontWeight="Bold" Padding="0,0,0,0"/>
+                <Label Content="SCY :" HorizontalAlignment="Left" Margin="120,154,0,0" VerticalAlignment="Top" Width="36" FontWeight="Bold" Padding="0,0,0,0"/>
+                <Label Content="Cycle :" HorizontalAlignment="Left" Margin="10,188,0,0" VerticalAlignment="Top" Width="42" FontWeight="Bold" Padding="0,0,0,0"/>
+                <Label x:Name="pcRegisterLabel" Content="0x0000" HorizontalAlignment="Left" Margin="43,94,0,0" VerticalAlignment="Top" Width="53" Padding="0,0,0,0"/>
+                <Label x:Name="spRegisterLabel" Content="0x0000" HorizontalAlignment="Left" Margin="43,109,0,0" VerticalAlignment="Top" Width="53" Padding="0,0,0,0"/>
+                <Label x:Name="ieRegisterLabel" Content="0x0000" HorizontalAlignment="Left" Margin="43,125,0,0" VerticalAlignment="Top" Width="53" Padding="0,0,0,0"/>
+                <Label x:Name="ifRegisterLabel" Content="0x0000" HorizontalAlignment="Left" Margin="43,139,0,0" VerticalAlignment="Top" Width="53" Padding="0,0,0,0"/>
+                <Label x:Name="lyRegisterLabel" Content="0x0000" HorizontalAlignment="Left" Margin="161,94,0,0" VerticalAlignment="Top" Width="53" Padding="0,0,0,0"/>
+                <Label x:Name="lcdcRegisterLabel" Content="0x0000" HorizontalAlignment="Left" Margin="161,109,0,0" VerticalAlignment="Top" Width="53" Padding="0,0,0,0"/>
+                <Label x:Name="statRegisterLabel" Content="0x0000" HorizontalAlignment="Left" Margin="161,125,0,0" VerticalAlignment="Top" Width="53" Padding="0,0,0,0"/>
+                <Label x:Name="scxRegisterLabel" Content="0x0000" HorizontalAlignment="Left" Margin="43,154,0,0" VerticalAlignment="Top" Width="53" Padding="0,0,0,0"/>
+                <Label x:Name="scyRegisterLabel" Content="0x0000" HorizontalAlignment="Left" Margin="161,154,0,0" VerticalAlignment="Top" Width="53" Padding="0,0,0,0"/>
+                <Label x:Name="cycleCountLabel" Content="0" HorizontalAlignment="Center" Margin="0,188,0,0" VerticalAlignment="Top" Width="108" Padding="0,0,0,0"/>
+                <CheckBox x:Name="imeCheckbox" Content="IME" HorizontalAlignment="Left" Margin="124,70,0,0" VerticalAlignment="Top" IsEnabled="False"/>
+            </Grid>
+        </GroupBox>
+        <CheckBox x:Name="autoRefreshCheckbox" Content="Actualisation automatique" HorizontalAlignment="Left" Margin="10,0,0,10" VerticalAlignment="Bottom" Checked="autoRefreshCheckbox_Checked"/>
     </Grid>
+
+    <Window.Resources>
+        <Style TargetType="{x:Type Control}" x:Key="baseStyle">
+            <Setter Property="FontSize" Value="11.5" />
+        </Style>
+        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource baseStyle}"></Style>
+        <Style TargetType="{x:Type Label}" BasedOn="{StaticResource baseStyle}"></Style>
+        <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource baseStyle}"></Style>
+        <Style TargetType="{x:Type ListView}" BasedOn="{StaticResource baseStyle}"></Style>
+    </Window.Resources>
 </Window>

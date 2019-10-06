@@ -8,10 +8,14 @@ namespace SharpBoyEmulator.Models
     {
         IGameBoy Device { get; set; }
 
-        void LoadRomData(string romPath);
+        void LoadCartridge(string romPath);
         IRomHeader GetROMHeader();
         void ResetEmulator();
 
         IMemoryCell[] GetMemoryCells(int startIndex, int endIndex);
+        List<IInstruction> GetAllInstructions();
+        IRegisters GetRegisters();
+        void Step();
+        void StartEmulator();
     }
 }

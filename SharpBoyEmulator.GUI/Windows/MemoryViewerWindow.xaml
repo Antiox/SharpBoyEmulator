@@ -12,10 +12,12 @@
                 <ComboBoxItem Content="Tout (0000-FFFF)"/>
                 <ComboBoxItem Content="ROM (0000-7FFF)"/>
                 <ComboBoxItem Content="Video RAM (8000-9FFF)"/>
+                <ComboBoxItem Content="RAM Externe (A000-BFFF)"/>
                 <ComboBoxItem Content="Work RAM (C000-DFFF)"/>
+                <ComboBoxItem Content="Echo RAM (E000-FDFF)"/>
                 <ComboBoxItem Content="Sprite Memory (FE00-FE9F)"/>
                 <ComboBoxItem Content="I/O Memory (FF00-FF4B)"/>
-                <ComboBoxItem Content="Internal RAM (FF80-FFFE)"/>
+                <ComboBoxItem Content="High Internal RAM (FF80-FFFE)"/>
             </ComboBox>
             <Label x:Name="label" Content="Aller à l'adresse :" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="0,-3,-13,0"/>
             <TextBox x:Name="AddressTextBox" Text="" TextWrapping="Wrap" Width="65" KeyDown="AddressTextBox_KeyDown"/>

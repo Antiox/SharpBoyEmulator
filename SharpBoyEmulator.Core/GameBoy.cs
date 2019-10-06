@@ -10,6 +10,7 @@ namespace SharpBoyEmulator.Core
     {
         public IProcessor Processor { get; set; }
         public IMemory Memory { get; set; }
+        public ICartridge Cartridge { get; set; }
 
 
         public GameBoy()
@@ -19,14 +20,15 @@ namespace SharpBoyEmulator.Core
         }
 
 
-        public void LoadMemory(byte[] data)
+        public void LoadCartridge(byte[] data)
         {
+            Cartridge = new Cartridge(data);
         }
 
 
         public IRomHeader GetRomHeader()
         {
-            return null;
+            return Cartridge.GetRomHeader();
         }
 
         public void ResetEmulator()
@@ -36,11 +38,41 @@ namespace SharpBoyEmulator.Core
 
         public IMemoryCell[] GetMemoryCells(int startIndex, int endIndex)
         {
-            return null;
+            var cells = new IMemoryCell[endIndex - startIndex + 1];
+
+            for (int i = startIndex; i <= endIndex; i++)
+                cells[i - startIndex] = new MemoryCell(i, Memory.ReadByte((ushort)i));
+
+            return cells;
         }
 
         public void Start()
         {
+        }
+
+        public IInstruction GetInstruction(ushort address)
+        {
+            var instructionAddress = address;
+            var code = Memory.ReadByte(address++);
+            var opcode = code == 0xCB ? InstructionSet.PrefixOpcodes[Memory.ReadByte(address++)] : InstructionSet.StandardOpcodes[code];
+            var parameters = Memory.ReadBytes(address, opcode.OperandLength);
+            return new Instruction(instructionAddress, opcode, parameters);
+        }
+
+        public IRegisters GetRegisters()
+        {
+            return Processor.Registers;
+        }
+
+        public void Step()
+        {
+            Processor.Step();
+        }
+
+        public void Initialize()
+        {
+            Processor.Initialize();
+            Memory.Initialize();
         }
     }
 }

@@ -9,6 +9,10 @@ namespace SharpBoyEmulator.Models
         IRegisters Registers { get; set; }
 
 
+        void Step();
+        void Initialize();
+
+
 
         byte Add(byte value);
         ushort Add(ushort value1, ushort value2);

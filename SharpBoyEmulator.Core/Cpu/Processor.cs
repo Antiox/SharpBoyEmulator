@@ -20,6 +20,20 @@ namespace SharpBoyEmulator.Core
         }
 
 
+        public void Initialize()
+        {
+            Registers.Initialize();
+        }
+
+        public void Step()
+        {
+            var currentInstruction =_device.GetInstruction(Registers.PC);
+            currentInstruction.Execute(_device);
+            Registers.PC += (ushort)currentInstruction.Opcode.PC;
+        }
+
+
+
         public byte Add(byte value)
         {
             var temp = Registers.A + value;

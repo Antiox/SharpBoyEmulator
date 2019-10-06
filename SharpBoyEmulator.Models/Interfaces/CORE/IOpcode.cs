@@ -12,6 +12,8 @@ namespace SharpBoyEmulator.Models
         string Description { get; }
         int Cycle { get; }
         int VariableCycle { get; }
+        byte Operator { get; }
+        int PC { get; }
 
         int InvokeOperation(IGameBoy device, IInstruction instruction);
     }

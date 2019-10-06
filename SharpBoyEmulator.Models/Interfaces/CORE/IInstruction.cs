@@ -7,6 +7,8 @@ namespace SharpBoyEmulator.Models
     public interface IInstruction
     {
         ushort Address { get; }
+        string HexAddress { get; }
+        string RawBytes { get; }
         IOpcode Opcode { get; }
         byte[] Parameters { get; }
         public byte Parameter8 { get; }

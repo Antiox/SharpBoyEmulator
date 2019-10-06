@@ -44,8 +44,9 @@ namespace SharpBoyEmulator.GUI
 
             if (romFileDialog.ShowDialog(this) == true)
             {
-                businessLogic.LoadRomData(romFileDialog.FileName);
+                businessLogic.LoadCartridge(romFileDialog.FileName);
                 EnableControls();
+                businessLogic.StartEmulator();
             }
         }
 
@@ -56,12 +57,12 @@ namespace SharpBoyEmulator.GUI
 
         private void DisassembleMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            new DisassembleWindow().ShowDialog();
+            new DisassembleWindow().Show();
         }
 
         private void RomHeaderMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            new RomHeaderWindow().ShowDialog();
+            new RomHeaderWindow().Show();
         }
 
         private void EjectMenuItem_Click(object sender, RoutedEventArgs e)
@@ -72,7 +73,7 @@ namespace SharpBoyEmulator.GUI
 
         private void MemoryViewerMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            new MemoryViewerWindow().ShowDialog();
+            new MemoryViewerWindow().Show();
         }
 
 

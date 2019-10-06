@@ -8,8 +8,7 @@ namespace SharpBoyEmulator.Core
     public class Registers : IRegisters
     {
         public bool IME { get; set; } // Interrupt Master Enable : bit qui détermine si on doit gérer ou non les interruptions
-        public bool InterruptsEnabled { get; set; }
-        public bool CanInterrupt { get => IME && InterruptsEnabled; }
+        public byte EnabledInterrupts { get; set; }
 
 
         public byte A { get; set; }
@@ -79,6 +78,17 @@ namespace SharpBoyEmulator.Core
         {
             get { return (byte)((F & 0x10) / 0x10); } // Retourne le 5ème bit du registre F
             set { F = (byte)((F & 0xEF) | (value << 4)); } // Remplace le 5ème bit du registre F par la valeur voulue
+        }
+
+        public void Initialize()
+        {
+            PC = 0x0100;
+            SP = 0xFFFE;
+            AF = 0x01B0;
+            BC = 0x0013;
+            DE = 0x00D8;
+            HL = 0x014D;
+            IME = true;
         }
     }
 }

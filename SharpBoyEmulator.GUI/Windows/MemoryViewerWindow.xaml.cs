@@ -45,10 +45,12 @@ namespace SharpBoyEmulator.GUI
                 case 0: PopulateListView(0, 0xFFFF); break;
                 case 1: PopulateListView(0, 0x7FFF); break;
                 case 2: PopulateListView(0x8000, 0x9FFF); break;
-                case 3: PopulateListView(0xC000, 0xDFFF); break;
-                case 4: PopulateListView(0xFE00, 0xFE9F); break;
-                case 5: PopulateListView(0xFF00, 0xFF4B); break;
-                case 6: PopulateListView(0xFF80, 0xFFFE); break;
+                case 3: PopulateListView(0xA000, 0xBFFF); break;
+                case 4: PopulateListView(0xC000, 0xDFFF); break;
+                case 5: PopulateListView(0xE000, 0xFDFF); break;
+                case 6: PopulateListView(0xFE00, 0xFE9F); break;
+                case 7: PopulateListView(0xFF00, 0xFF4B); break;
+                case 8: PopulateListView(0xFF80, 0xFFFE); break;
             }
         }
 
@@ -66,7 +68,7 @@ namespace SharpBoyEmulator.GUI
             if (MemoryListView == null)
                 return;
 
-
+            cells = businessLogic.GetMemoryCells(startIndex, endIndex);
             MemoryListView.ItemsSource = cells;
         }
 
