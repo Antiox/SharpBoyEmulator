@@ -48,6 +48,7 @@ namespace SharpBoyEmulator.Core
 
         public void Start()
         {
+            throw new NotImplementedException();
         }
 
         public IInstruction GetInstruction(ushort address)

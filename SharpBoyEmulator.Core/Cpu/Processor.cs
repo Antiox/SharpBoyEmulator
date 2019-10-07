@@ -82,13 +82,13 @@ namespace SharpBoyEmulator.Core
         }
         public byte Sub(byte value)
         {
-            var temp = 0;
+            byte temp;
             Registers.NFlag = 1;
             Registers.HFlag = (byte)((Registers.A & 0xF) < (value & 0xF) ? 1 : 0);
             Registers.CFlag = (byte)(Registers.A < value ? 1 : 0);
             temp = (byte)(Registers.A - value);
             Registers.ZFlag = (byte)((temp == 0) ? 1 : 0);
-            return (byte)temp;
+            return temp;
         }
         public byte Sbc(byte value)
         {

@@ -39,6 +39,8 @@ namespace SharpBoyEmulator.GUI
 
         private void StartStopButton_Click(object sender, RoutedEventArgs e)
         {
+            throw new NotImplementedException();
+
         }
 
         private void ExecuteInstructionButton_Click(object sender, RoutedEventArgs e)
@@ -50,17 +52,17 @@ namespace SharpBoyEmulator.GUI
 
         private void AddressTextBox_KeyDown(object sender, KeyEventArgs e)
         {
-
+            throw new NotImplementedException();
         }
 
         private void RefreshInstructionButton_Click(object sender, RoutedEventArgs e)
         {
-
+            throw new NotImplementedException();
         }
 
         private void autoRefreshCheckbox_Checked(object sender, RoutedEventArgs e)
         {
-
+            throw new NotImplementedException();
         }
 
 

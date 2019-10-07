@@ -80,20 +80,20 @@ namespace SharpBoyEmulator.Core
 
         public byte ReadByte(ushort address)
         {
-            switch (address)
+            return address switch
             {
-                case ushort n when n < 0x8000: return _device.Cartridge.ReadByte(address);
-                case ushort n when n >= 0x8000 && n < 0xA000: return _internalVideoRam[n - 0x8000];
-                case ushort n when n >= 0xA000 && n < 0xC000: return _device.Cartridge.ReadByte(address);
-                case ushort n when n >= 0xC000 && n < 0xE000: return _internalRam[n - 0xC000];
-                case ushort n when n >= 0xE000 && n < 0xFE00: return _internalRam[n - 0xE000];
-                case ushort n when n >= 0xFE00 && n < 0xFEA0: return _oamMemory[n - 0xFE00];
-                case ushort n when n >= 0xFEA0 && n < 0xFF00: return 0x00;
-                case ushort n when n >= 0xFF00 && n < 0xFF4C: return _ioMemory[n - 0xFF00];
-                case ushort n when n >= 0xFF80 && n < 0xFFFF: return _highInternalRam[n - 0xFF80];
-                case ushort n when n == 0xFFFF: return _device.Processor.Registers.EnabledInterrupts;
-                default: return 0x00;
-            }
+                ushort n when n < 0x8000 => _device.Cartridge.ReadByte(address),
+                ushort n when n >= 0x8000 && n < 0xA000 => _internalVideoRam[n - 0x8000],
+                ushort n when n >= 0xA000 && n < 0xC000 => _device.Cartridge.ReadByte(address),
+                ushort n when n >= 0xC000 && n < 0xE000 => _internalRam[n - 0xC000],
+                ushort n when n >= 0xE000 && n < 0xFE00 => _internalRam[n - 0xE000],
+                ushort n when n >= 0xFE00 && n < 0xFEA0 => _oamMemory[n - 0xFE00],
+                ushort n when n >= 0xFEA0 && n < 0xFF00 => 0x00,
+                ushort n when n >= 0xFF00 && n < 0xFF4C => _ioMemory[n - 0xFF00],
+                ushort n when n >= 0xFF80 && n < 0xFFFF => _highInternalRam[n - 0xFF80],
+                ushort n when n == 0xFFFF => _device.Processor.Registers.EnabledInterrupts,
+                _ => 0x00,
+            };
         }
         public ushort ReadUShort(ushort address)
         {

@@ -16,7 +16,7 @@ namespace SharpBoyEmulator.Core
             _romHeader = new RomHeader(romData);
             _mbc = (romData[0x0147]) switch
             {
-                _ => new MBCRomOnly(romData),
+                _ => new MbcRomOnly(romData),
             };
         }
 

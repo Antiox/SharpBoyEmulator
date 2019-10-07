@@ -5,13 +5,13 @@ using SharpBoyEmulator.Models;
 
 namespace SharpBoyEmulator.Core
 {
-    class MBCRomOnly : IMemoryBankController
+    class MbcRomOnly : IMemoryBankController
     {
         private readonly byte[]  _romData;
         private readonly byte[] _ramData;
 
 
-        public MBCRomOnly(byte[] romData)
+        public MbcRomOnly(byte[] romData)
         {
             _romData = romData;
             _ramData = new byte[0x2000];
@@ -20,12 +20,12 @@ namespace SharpBoyEmulator.Core
 
         public byte ReadByte(ushort address)
         {
-            switch (address)
+            return address switch
             {
-                case ushort n when n < 0x8000: return _romData[n];
-                case ushort n when n >= 0xA000 && n < 0xC000: return _ramData[n - 0xA000];
-                default: return 0x00;
-            }
+                ushort n when n < 0x8000 => _romData[n],
+                ushort n when n >= 0xA000 && n < 0xC000 => _ramData[n - 0xA000],
+                _ => 0x00,
+            };
         }
 
         public void WriteByte(ushort address, byte value)

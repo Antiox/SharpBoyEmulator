@@ -23,6 +23,7 @@ namespace SharpBoyEmulator.BLL
             var _data = new byte[stream.Length];
             stream.Read(_data, 0, _data.Length);
             Device.LoadCartridge(_data);
+            stream.Dispose();
         }
 
         public IRomHeader GetROMHeader()
