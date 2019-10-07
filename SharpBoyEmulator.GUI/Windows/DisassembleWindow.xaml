@@ -68,7 +68,7 @@
                 <CheckBox x:Name="imeCheckbox" Content="IME" HorizontalAlignment="Left" Margin="124,70,0,0" VerticalAlignment="Top" IsEnabled="False"/>
             </Grid>
         </GroupBox>
-        <CheckBox x:Name="autoRefreshCheckbox" Content="Actualisation automatique" HorizontalAlignment="Left" Margin="10,0,0,10" VerticalAlignment="Bottom" Checked="autoRefreshCheckbox_Checked"/>
+        <CheckBox x:Name="AutoRefreshCheckbox" Content="Actualisation automatique" HorizontalAlignment="Left" Margin="10,0,0,10" VerticalAlignment="Bottom" Checked="AutoRefreshCheckbox_Checked"/>
     </Grid>
 
     <Window.Resources>

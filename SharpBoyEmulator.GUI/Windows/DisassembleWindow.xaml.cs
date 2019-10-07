@@ -60,7 +60,7 @@ namespace SharpBoyEmulator.GUI
             throw new NotImplementedException();
         }
 
-        private void autoRefreshCheckbox_Checked(object sender, RoutedEventArgs e)
+        private void AutoRefreshCheckbox_Checked(object sender, RoutedEventArgs e)
         {
             throw new NotImplementedException();
         }
