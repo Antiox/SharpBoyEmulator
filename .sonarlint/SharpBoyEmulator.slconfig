@@ -1,0 +1,12 @@
+{
+  "ServerUri": "http://192.168.1.22:9002",
+  "Organization": null,
+  "ProjectKey": "SharpBoyEmulator",
+  "ProjectName": "SharpBoyEmulator",
+  "Profiles": {
+    "CSharp": {
+      "ProfileKey": "AW2l03Sekpe3UKHEgfoY",
+      "ProfileTimestamp": "2019-10-07T12:46:01+02:00"
+    }
+  }
+}

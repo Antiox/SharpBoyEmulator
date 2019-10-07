@@ -1,0 +1,7 @@
+organization=antiox
+projectKey=Antiox_SharpBoyEmulator
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.884
+dashboardUrl=https://sonarcloud.io/dashboard?id=Antiox_SharpBoyEmulator
+ceTaskId=AW2mR5oiHZJ1VkQz7cbk
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AW2mR5oiHZJ1VkQz7cbk
