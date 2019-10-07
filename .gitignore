@@ -6,7 +6,8 @@
 .sonarqube/
 packages/
 *.bat
-
+.scannerwork/
+.sonarlint/
 
 # User-specific files
 *.rsuser

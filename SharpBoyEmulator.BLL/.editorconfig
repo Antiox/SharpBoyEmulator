@@ -1,4 +1,0 @@
-﻿[*.cs]
-
-# S2930: "IDisposables" should be disposed
-dotnet_diagnostic.S2930.severity = silent
