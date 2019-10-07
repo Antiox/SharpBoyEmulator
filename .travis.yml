@@ -1,2 +1,6 @@
 language: csharp
 solution: SharpBoyEmulator.sln
+mono: none
+dotnet: 3.0
+script:
+ - dotnet restore
