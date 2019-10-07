@@ -2,7 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
+		<ProjectGuid>{913E5711-FE55-4FA3-878E-9F41F4EF1671}</ProjectGuid>
   </PropertyGroup>
+  
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <CodeAnalysisRuleSet>SharpBoyEmulator.BLL.ruleset</CodeAnalysisRuleSet>

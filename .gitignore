@@ -8,6 +8,7 @@ packages/
 *.bat
 .scannerwork/
 .sonarlint/
+coverage.xml
 
 # User-specific files
 *.rsuser
