@@ -1,6 +1,5 @@
 language: csharp
 solution: SharpBoyEmulator.sln
-os: windows
 mono: none
 dotnet: 3.0
 script:
