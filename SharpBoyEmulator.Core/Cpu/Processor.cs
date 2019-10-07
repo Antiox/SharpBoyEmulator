@@ -339,20 +339,16 @@ namespace SharpBoyEmulator.Core
         }
         public void Daa()
         {
-            if (Registers.NFlag != 0)
+            if (Registers.NFlag != 0 && Registers.HFlag != 0) Registers.A -= 0x06;
+            else if (Registers.NFlag != 0 && Registers.CFlag != 0) Registers.A -= 0x60;
+            else if (Registers.CFlag != 0 || Registers.A > 0x99)
             {
-                if (Registers.HFlag != 0) Registers.A -= 0x06;
-                if (Registers.CFlag != 0) Registers.A -= 0x60;
+                Registers.A += Registers.HFlag != 0 || (Registers.A & 0x0F) > 0x09 ? (byte)0x66 : (byte)0x60;
+                Registers.CFlag = 1;
             }
-            else
-            {
-                if (Registers.CFlag != 0 || Registers.A > 0x99)
-                {
-                    Registers.A += Registers.HFlag != 0 || (Registers.A & 0x0F) > 0x09 ? (byte)0x66 : (byte)0x60;
-                    Registers.CFlag = 1;
-                }
-                else if (Registers.HFlag != 0 || (Registers.A & 0x0F) > 0x09) Registers.A += 0x06;
-            }
+            else if (Registers.HFlag != 0 || (Registers.A & 0x0F) > 0x09) Registers.A += 0x06;
+
+
             Registers.ZFlag = (byte)(Registers.A == 0 ? 1 : 0);
             Registers.F &= 0xD0;
         }
