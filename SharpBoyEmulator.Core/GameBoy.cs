@@ -8,9 +8,9 @@ namespace SharpBoyEmulator.Core
 {
     public class GameBoy : IGameBoy
     {
-        public IProcessor Processor { get; set; }
-        public IMemory Memory { get; set; }
-        public ICartridge Cartridge { get; set; }
+        public IProcessor Processor { get; private set; }
+        public IMemory Memory { get; private set; }
+        public ICartridge Cartridge { get; private set; }
 
 
         public GameBoy()

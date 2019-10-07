@@ -6,9 +6,9 @@ namespace SharpBoyEmulator.Models
 {
     public interface IGameBoy
     {
-        IProcessor Processor { get; set; }
-        IMemory Memory { get; set; }
-        ICartridge Cartridge { get; set; }
+        IProcessor Processor { get; }
+        IMemory Memory { get; }
+        ICartridge Cartridge { get; }
 
 
         void LoadCartridge(byte[] data);

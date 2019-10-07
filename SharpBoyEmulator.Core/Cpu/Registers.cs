@@ -80,6 +80,8 @@ namespace SharpBoyEmulator.Core
             set { F = (byte)((F & 0xEF) | (value << 4)); } // Remplace le 5ème bit du registre F par la valeur voulue
         }
 
+        public long CycleCount { get; set; }
+
         public void Initialize()
         {
             PC = 0x0100;

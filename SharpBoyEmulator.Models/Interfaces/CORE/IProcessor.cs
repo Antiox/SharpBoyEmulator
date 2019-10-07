@@ -6,7 +6,7 @@ namespace SharpBoyEmulator.Models
 {
     public interface IProcessor
     {
-        IRegisters Registers { get; set; }
+        IRegisters Registers { get; }
 
 
         void Step();

@@ -7,7 +7,7 @@ namespace SharpBoyEmulator.Core
 {
     public class Processor : IProcessor
     {
-        public IRegisters Registers { get; set; }
+        public IRegisters Registers { get; private set; }
 
 
         private readonly IGameBoy _device;
@@ -28,8 +28,9 @@ namespace SharpBoyEmulator.Core
         public void Step()
         {
             var currentInstruction =_device.GetInstruction(Registers.PC);
-            currentInstruction.Execute(_device);
+            var cycle = currentInstruction.Execute(_device);
             Registers.PC += (ushort)currentInstruction.Opcode.PC;
+            Registers.CycleCount += cycle;
         }
 
 

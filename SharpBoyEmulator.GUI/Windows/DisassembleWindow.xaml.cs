@@ -85,6 +85,7 @@ namespace SharpBoyEmulator.GUI
             hFlagCheckbox.IsChecked = _registers.HFlag == 1;
             cFlagCheckbox.IsChecked = _registers.CFlag == 1;
             imeCheckbox.IsChecked = _registers.IME;
+            cycleCountLabel.Content = _registers.CycleCount;
         }
     }
 }

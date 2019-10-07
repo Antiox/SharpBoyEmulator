@@ -24,6 +24,7 @@ namespace SharpBoyEmulator.Models
         ushort BC { get; set; }
         ushort DE { get; set; }
         ushort HL { get; set; }
+        long CycleCount { get; set; }
 
 
         byte ZFlag { get; set; }
