@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SharpBoyEmulator.Core
 {
-    class Instruction : IInstruction
+    public class Instruction : IInstruction
     {
         public ushort Address { get; }
         public IOpcode Opcode { get; }

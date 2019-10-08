@@ -102,5 +102,58 @@ namespace SharpBoyEmulator.Test
             Assert.Equal(expected1 * 0x100 | expected2, _gameboy.Processor.Registers.DE);
             Assert.Equal(expected1 * 0x100 | expected2, _gameboy.Processor.Registers.HL);
         }
+
+        [Fact]
+        public void AssertIME()
+        {
+            _gameboy = new GameBoy();
+            _gameboy.Processor.Registers.IME = true;
+            Assert.True(_gameboy.Processor.Registers.IME);
+        }
+
+        [Fact]
+        public void AssertEnabledInterrupts()
+        {
+            _gameboy = new GameBoy();
+            _gameboy.Processor.Registers.EnabledInterrupts = 0x38;
+            Assert.Equal(0x38, _gameboy.Processor.Registers.EnabledInterrupts);
+        }
+
+        [Fact]
+        public void AssertCycleCount()
+        {
+            _gameboy = new GameBoy();
+            _gameboy.Processor.Registers.CycleCount = 1234567;
+            Assert.Equal(1234567, _gameboy.Processor.Registers.CycleCount);
+        }
+
+        [Theory]
+        [InlineData(0x00, 0, 0, 0, 0)]
+        [InlineData(0x84, 1, 0, 0, 0)]
+        [InlineData(0xF0, 1, 1, 1, 1)]
+        public void AssertFlags(byte F, byte expectedZ, byte expectedN, byte expectedH, byte expectedC)
+        {
+            _gameboy = new GameBoy();
+            _gameboy.Processor.Registers.F = F;
+
+            Assert.Equal(_gameboy.Processor.Registers.ZFlag, expectedZ);
+            Assert.Equal(_gameboy.Processor.Registers.NFlag, expectedN);
+            Assert.Equal(_gameboy.Processor.Registers.HFlag, expectedH);
+            Assert.Equal(_gameboy.Processor.Registers.CFlag, expectedC);
+        }
+    
+        [Fact]
+        public void AssertInitialize()
+        {
+            _gameboy = new GameBoy();
+            _gameboy.Processor.Registers.Initialize();
+            Assert.Equal(0x01B0, _gameboy.Processor.Registers.AF);
+            Assert.Equal(0x0013, _gameboy.Processor.Registers.BC);
+            Assert.Equal(0x00D8, _gameboy.Processor.Registers.DE);
+            Assert.Equal(0x014D, _gameboy.Processor.Registers.HL);
+            Assert.Equal(0x0100, _gameboy.Processor.Registers.PC);
+            Assert.Equal(0xFFFE, _gameboy.Processor.Registers.SP);
+            Assert.True(_gameboy.Processor.Registers.IME);
+        }
     }
 }
