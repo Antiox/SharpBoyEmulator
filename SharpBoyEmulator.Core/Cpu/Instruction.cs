@@ -25,7 +25,7 @@ namespace SharpBoyEmulator.Core
                 _ => Opcode.Description
             };
         }
-
+         
 
 
         public Instruction(ushort address, Opcode opcode, byte[] parameters)
