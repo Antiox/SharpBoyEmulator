@@ -2,7 +2,7 @@
 
 namespace SharpBoyEmulator.Core
 {
-    class Cartridge : ICartridge
+    public class Cartridge : ICartridge
     {
         private readonly IMemoryBankController _mbc;
         private readonly IRomHeader _romHeader;
