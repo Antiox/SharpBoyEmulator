@@ -88,7 +88,7 @@ namespace SharpBoyEmulator.Core
                 ushort n when n >= 0xFE00 && n < 0xFEA0 => _oamMemory[n - 0xFE00],
                 ushort n when n >= 0xFEA0 && n < 0xFF00 => 0x00,
                 ushort n when n >= 0xFF00 && n < 0xFF4C => _ioMemory[n - 0xFF00],
-                ushort n when n >= 0xFF80 && n < 0xFFFF => _highInternalRam[n - 0xFF80],
+                ushort n when n >= 0xFF4C && n < 0xFFFF => _highInternalRam[n - 0xFF4C],
                 ushort n when n == 0xFFFF => _device.Processor.Registers.EnabledInterrupts,
                 _ => 0x00,
             };

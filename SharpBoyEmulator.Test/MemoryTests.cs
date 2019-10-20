@@ -36,6 +36,7 @@ namespace SharpBoyEmulator.Test
         public void ReadWriteByteTest(ushort address, byte value, byte expected)
         {
             var device = new GameBoy();
+            device.LoadCartridge(new byte[0x8000]);
             _memory = new Memory(device);
 
 
