@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using SharpBoyEmulator.Models;
+﻿using SharpBoyEmulator.Models;
+using System;
 
 namespace SharpBoyEmulator.Core
 {
